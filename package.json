@@ -1,0 +1,23 @@
+{
+  "name": "elm-productivity",
+  "version": "1.0.0",
+  "description": "Productivity app built with elm",
+  "main": "index.js",
+  "author": "Frank A. Wilkerson",
+  "license": "MIT",
+  "scripts": {
+    "start": "webpack-dev-server --port 5000"
+  },
+  "devDependencies": {
+    "css-loader": "^0.27.3",
+    "elm-webpack-loader": "^4.2.0",
+    "file-loader": "^0.10.1",
+    "style-loader": "^0.14.1",
+    "url-loader": "^0.5.8",
+    "webpack": "^2.2.1",
+    "webpack-dev-server": "^2.4.2"
+  },
+  "dependencies": {
+    "font-awesome": "^4.7.0"
+  }
+}
