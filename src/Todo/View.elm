@@ -5,7 +5,7 @@ import Html.Attributes exposing (..)
 import Html.Events exposing (onClick, onInput, onSubmit)
 import Maybe exposing (withDefault)
 import Models exposing (Model)
-import Modal.Modal exposing (modal)
+import Common.Modal exposing (modal)
 import Todo.Models exposing (Todo)
 import Todo.Msgs exposing (..)
 
@@ -75,10 +75,10 @@ confirmDeleteModal model =
         ( content, open ) =
             case deleting of
                 Just todo ->
-                    ( todo.text, " modal-open" )
+                    ( todo.text, True )
 
                 Nothing ->
-                    ( "", "" )
+                    ( "", False )
     in
         modal
             open

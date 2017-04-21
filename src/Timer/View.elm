@@ -4,7 +4,7 @@ import Html exposing (..)
 import Html.Attributes exposing (..)
 import Html.Events exposing (..)
 import Models exposing (Model)
-import Modal.Modal exposing (modal)
+import Common.Modal exposing (modal)
 import Timer.Models exposing (..)
 import Timer.Msgs exposing (..)
 
@@ -25,9 +25,9 @@ setTimerModal model =
     let
         open =
             if model.showSetTimer then
-                " modal-open"
+                True
             else
-                ""
+                False
     in
         modal
             open
