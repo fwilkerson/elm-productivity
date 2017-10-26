@@ -7,6 +7,9 @@ import Maybe exposing (withDefault)
 import Components.Modal exposing (modal)
 
 
+-- Model --
+
+
 type alias Todo =
     { id : Int
     , completed : Bool
@@ -34,6 +37,10 @@ initialModel =
     , deleteId = Nothing
     , todoIdenity = 1
     }
+
+
+
+-- Update --
 
 
 type Msg
@@ -106,6 +113,10 @@ completeTodo todoId todo =
         { todo | completed = not todo.completed }
     else
         todo
+
+
+
+-- View --
 
 
 todoInput : Model -> Html Msg
