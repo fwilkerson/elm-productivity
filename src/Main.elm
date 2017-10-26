@@ -4,6 +4,7 @@ import Html exposing (div, Html, program)
 import Html.Attributes exposing (class)
 import Time exposing (every, second)
 import Components.Timer
+import Components.Todo
 
 
 -- Model --
@@ -11,12 +12,15 @@ import Components.Timer
 
 type alias Model =
     { timer : Components.Timer.Model
+    , todo : Components.Todo.Model
     }
 
 
 init : ( Model, Cmd Msg )
 init =
-    ( { timer = Components.Timer.initialModel }
+    ( { timer = Components.Timer.initialModel
+      , todo = Components.Todo.initialModel
+      }
     , Cmd.none
     )
 
@@ -27,6 +31,7 @@ init =
 
 type Msg
     = Timer Components.Timer.Msg
+    | Todo Components.Todo.Msg
 
 
 update : Msg -> Model -> ( Model, Cmd Msg )
@@ -38,6 +43,13 @@ update msg model =
                     Components.Timer.update timerMsg model.timer
             in
                 ( { model | timer = subModel }, Cmd.map Timer subCmd )
+
+        Todo todoMsg ->
+            let
+                ( subModel, subCmd ) =
+                    Components.Todo.update todoMsg model.todo
+            in
+                ( { model | todo = subModel }, Cmd.map Todo subCmd )
 
 
 
@@ -61,7 +73,9 @@ view model =
             [ class "row" ]
             [ div
                 [ class "eight columns offset-by-two" ]
-                [ Html.map Timer (Components.Timer.view model.timer)
+                [ Html.map Todo (Components.Todo.todoInput model.todo)
+                , Html.map Timer (Components.Timer.view model.timer)
+                , Html.map Todo (Components.Todo.todoList model.todo)
                 ]
             ]
         ]

@@ -1,10 +1,10 @@
-module Components.Timer exposing (initialModel, Model, Msg(..), update, view)
+module Components.Timer exposing (initialModel, Model, Msg(Tick), update, view)
 
-import Html exposing (..)
-import Html.Attributes exposing (..)
-import Html.Events exposing (..)
+import Html exposing (button, div, h4, h5, Html, input, text)
+import Html.Attributes exposing (class, type_, value)
+import Html.Events exposing (onClick, onInput)
 import Time exposing (Time)
-import Common.Modal exposing (modal)
+import Components.Modal exposing (modal)
 
 
 -- Model --
