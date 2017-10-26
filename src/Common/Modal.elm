@@ -5,7 +5,7 @@ import Html.Attributes exposing (class)
 import Html.Events exposing (onClick)
 
 
--- example implementation
+-- example usage
 -- modal
 --     True
 --     OkAction

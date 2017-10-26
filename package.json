@@ -8,6 +8,10 @@
   "scripts": {
     "start": "webpack-dev-server --port 5000"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fwilkerson/elm-productivity.git"
+  },
   "devDependencies": {
     "css-loader": "^0.27.3",
     "elm": "^0.18.0",
