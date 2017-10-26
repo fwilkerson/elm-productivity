@@ -1,4 +1,4 @@
-module Components.Todo exposing (initialModel, Model, Msg(..), todoInput, todoList, update)
+module Components.Todo exposing (initialModel, Model, Msg, todoInput, todoList, update)
 
 import Html exposing (div, h4, h6, Html, input, li, p, span, text, ul)
 import Html.Attributes exposing (autofocus, class, placeholder, style, type_, value)
